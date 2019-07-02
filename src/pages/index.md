@@ -1,9 +1,13 @@
 ---
 templateKey: index-page
-title: Great coffee with a conscience
+title: >-
+  vi är en kreativ produktionsbyrå som hjälper intressanta företag göra
+  intressanta saker.
 image: /img/home-jumbotron.jpg
-heading: Great coffee with a conscience
-subheading: Support sustainable farming while enjoying a cup
+heading: >-
+  vi är en kreativ produktionsbyrå som hjälper intressanta företag göra
+  intressanta saker.
+subheading: <3
 mainpitch:
   title: Why Kaldi
   description: >
@@ -68,3 +72,4 @@ main:
     alt: Coffee beans
     image: /img/products-grid1.jpg
 ---
+

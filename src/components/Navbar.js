@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import github from '../img/github-icon.svg'
 import logo from '../img/logo.svg'
+//import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -60,9 +61,16 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
+
+          {/*    <AniLink cover top="entry"
+                direction="left"
+                duration={1} to="/about">
+                About 1
+              </AniLink> */}
+            <Link className="navbar-item" to="/about">
+              About
+            </Link>
+
               <Link className="navbar-item" to="/products">
                 Products
               </Link>

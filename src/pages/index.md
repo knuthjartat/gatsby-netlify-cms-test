@@ -8,6 +8,8 @@ heading: >-
   vi är en kreativ produktionsbyrå som hjälper intressanta företag göra
   intressanta saker.
 subheading: <3
+subtitle:  >- 
+  Det här är en subtitle
 mainpitch:
   title: Why Kaldi
   description: >
@@ -72,4 +74,3 @@ main:
     alt: Coffee beans
     image: /img/products-grid1.jpg
 ---
-

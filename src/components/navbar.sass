@@ -5,6 +5,7 @@ $navbar-height: 50px
   height: $navbar-height
   width: 100%
   display: block
+  padding: 1em
   .container
     margin: auto
     height: 100%
@@ -13,7 +14,6 @@ $navbar-height: 50px
     width: 100%
     .navbar-brand
       @include flex(1)
-      margin-left: 1em
       img
         height: $navbar-height
 
@@ -22,3 +22,12 @@ $navbar-height: 50px
       @include flexbox()
       @include justify-content(center)
       @include flex(1)
+      padding: 1em
+      .navbar-start
+        @include flexbox
+        @include align-items(center)
+        width: 100%
+        margin-right: 1em
+
+        .react-reveal
+          @include flex(1)

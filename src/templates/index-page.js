@@ -11,6 +11,7 @@ export const IndexPageTemplate = ({
   title,
   heading,
   subheading,
+  subtitle,
   mainpitch,
   description,
   intro,
@@ -19,9 +20,6 @@ export const IndexPageTemplate = ({
     <div
       className="full-width-image margin-top-0"
       style={{
-    //    backgroundImage: `url(${
-    //      !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-    //    })`,
         backgroundPosition: `top left`,
         backgroundAttachment: `fixed`,
         backgroundColor: 'black',
@@ -40,11 +38,8 @@ export const IndexPageTemplate = ({
         }}
       >
         <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen wow flipInY" data-wow-delay="2s"
           style={{
-          //  boxShadow:
-          //    'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-          //  backgroundColor: 'rgb(255, 68, 0)',
             color: 'white',
             lineHeight: '1',
             padding: '0.25em',
@@ -55,9 +50,6 @@ export const IndexPageTemplate = ({
         <h3
           className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
           style={{
-          //  boxShadow:
-          //    'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-          //  backgroundColor: 'rgb(255, 68, 0)',
             color: 'white',
             lineHeight: '1',
             padding: '0.25em',
@@ -65,6 +57,7 @@ export const IndexPageTemplate = ({
         >
           {subheading}
         </h3>
+        <h2>{subtitle}</h2>
       </div>
     </div>
     <section className="section section--gradient">
@@ -122,6 +115,7 @@ IndexPageTemplate.propTypes = {
   title: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
+  subtitle: PropTypes.string,
   mainpitch: PropTypes.object,
   description: PropTypes.string,
   intro: PropTypes.shape({
@@ -139,6 +133,7 @@ const IndexPage = ({ data }) => {
         title={frontmatter.title}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
+        subtitle={frontmatter.subtitle}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
@@ -171,6 +166,7 @@ export const pageQuery = graphql`
         }
         heading
         subheading
+        subtitle
         mainpitch {
           title
           description

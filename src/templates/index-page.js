@@ -5,6 +5,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
+import Fade from 'react-reveal/Fade';
 
 export const IndexPageTemplate = ({
   image,
@@ -29,14 +30,16 @@ export const IndexPageTemplate = ({
       <div
         style={{
           display: 'flex',
-          height: '150px',
           lineHeight: '1',
           justifyContent: 'space-around',
           alignItems: 'left',
           flexDirection: 'column',
-          width: '90ch'
+          width: '160ch',
+          marginLeft: '6vw',
+          marginRight: '6vw',
         }}
       >
+      <Fade bottom cascade>
         <h1
           className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen wow flipInY" data-wow-delay="2s"
           style={{
@@ -47,6 +50,7 @@ export const IndexPageTemplate = ({
         >
           {title}
         </h1>
+      </Fade>
         <h3
           className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
           style={{

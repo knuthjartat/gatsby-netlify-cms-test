@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import logo from '../img/logo.svg'
+import logo_white from '../img/logo_white.svg'
 import Fade from 'react-reveal/Fade';
 //import AniLink from "gatsby-plugin-transition-link/AniLink"
 
@@ -47,7 +48,7 @@ const Navbar = class extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
+              <img src={logo_white} alt="hjartatåre" style={{ width: '88px' }} />
             </Link>
             {/* Hamburger menu */}
             <div
@@ -77,16 +78,10 @@ const Navbar = class extends React.Component {
             </Link>
 
               <Link className="navbar-item" to="/products">
-                Products
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
+                Work
               </Link>
               <Link className="navbar-item" to="/contact">
                 Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
               </Link>
             </Fade>
             </div>

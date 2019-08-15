@@ -1,0 +1,24 @@
+$navbar-height: 50px
+
+
+.navbar
+  height: $navbar-height
+  width: 100%
+  display: block
+  .container
+    margin: auto
+    height: 100%
+    @include flexbox()
+    @include align-items(center)
+    width: 100%
+    .navbar-brand
+      @include flex(1)
+      margin-left: 1em
+      img
+        height: $navbar-height
+
+
+    .navbar-menu
+      @include flexbox()
+      @include justify-content(center)
+      @include flex(1)

@@ -1,0 +1,54 @@
+
+$base-url: '../'; // Local URL to static content
+
+$font-url: $base-url + 'fonts/' !default;
+$fa-font-path: $base-url + 'fonts/fontawesome' !default;
+$fa-css-prefix: fa !default;
+
+
+/*
+$fa-font-path: $font-url + 'fontawesome';
+@import "libs/fontawesome/fontawesome"; // Font Awesome (5.6.8)
+@import "libs/fontawesome/regular"; // Font Awesome regular (5.6.8)
+@import "libs/fontawesome/light"; // Font Awesome light (5.6.8)
+@import "libs/fontawesome/solid"; // Font Awesome solid (5.6.8)
+@import "libs/fontawesome/brands"; // Font Awesome brands (5.6.8)
+@import "libs/fontawesome/v4-shims"; // Font Awesome 4 Shims (5.6.8)
+*/
+
+$headerTextColor: black;
+$textColor: black;
+$desktop-break: 1200px;
+$medium-break: 992px;
+$mobile-break: 768px;
+$mini-break: 460px;
+$content-snare: 1000px; // + 32x2 padding
+$content-margin: 14vw; //10vw;//32px;
+$wide-snare: 49.84em; //1794px;
+
+$black: #000000;
+$white: #FFFFFF;
+$darkgrey: #616972;
+$mediumgrey: #868A90;
+$lightgrey: #CECDCF;
+$smokegrey: #F2F2F2;
+$yellow: #FFED00;
+
+$blue: #4575ff;
+
+$box-shadow-small: 0 0.4375rem 2.25rem rgba(0, 0, 0, 0.10);
+$box-shadow-large: 0 0.4375rem 2.25rem rgba( 70, 70, 70, .55);
+
+@mixin transition($transition...) {
+    -moz-transition:   -moz-transition $transition;
+    -o-transition:     -o-transition $transition;
+    -webkit-transition: -webkit-transition $transition;
+    transition:         $transition;
+}
+
+@mixin transform($transform...) {
+    -moz-transform:    $transform;
+    -o-transform:      $transform;
+    -webkit-transform: $transform;
+    transform:         $transform;
+}

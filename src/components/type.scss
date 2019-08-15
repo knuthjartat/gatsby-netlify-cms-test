@@ -1,0 +1,329 @@
+$fontRegular: "Gotham A", "Gotham B" , "Gotham", "fallbackBoldFont";
+$fontBold: "Gotham A", "Gotham B" , "Gotham", "fallbackBoldFont";
+$fontItalic: "Gotham A", "Gotham B" , "Gotham", "fallbackBoldFont";
+
+@font-face {
+  font-family: 'fallbackBoldFont';
+  src: local('Arial');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'fallbackRegularFont';
+  src: local('Arial');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'fallbackItalicFont';
+  src: local('Arial');
+  font-weight: 600;
+}
+
+@mixin lhCrop($line-height) {
+  &::before {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    margin-top: calc((1 - #{$line-height}) * 0.5em);
+  }
+}
+
+@mixin bottomCrop($line-height) {
+  &::after {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    margin-top: calc((1 - #{$line-height}) * 0.5em);
+  }
+}
+
+@mixin auto-break-font($fontSizeDesktop, $fontSizeMobile: 16px){
+  @media (min-width: 0) and (max-width: $mobile-break) {
+    font-size: $fontSizeMobile;
+  }
+  @media (min-width: $mobile-break) and (max-width: $medium-break) {
+    font-size: (($fontSizeDesktop - $fontSizeMobile) / 2) + $fontSizeMobile;
+  }
+  @media (min-width: $medium-break) {
+    font-size: $fontSizeDesktop;
+  }
+}
+
+@mixin responsive-font($responsive, $min: false, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  @if $min {
+    @media (max-#{$dimension}: #{$min-breakpoint}) {
+      font-size: $min;
+    }
+  }
+
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      font-size: $max;
+    }
+  }
+
+  @if $fallback {
+    font-size: $fallback;
+  }
+
+  font-size: $responsive;
+}
+
+$primaryFont: $fontRegular;
+$strong: $fontBold;
+
+strong {
+  font-family: $strong;
+  font-weight: 500 !important;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.strong {
+  font-family: $strong;
+}
+
+.center {
+  text-align: center;
+}
+
+em, i {
+  font-family: $fontItalic;
+}
+
+html {
+  font-family: $fontRegular;
+  -webkit-font-smoothing: antialiased;
+}
+
+hr { border-color: rgba(0,0,0,0.1); }
+
+/* Copy & Lists */
+$heading-line-height: 1.03846em; //0.97;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  line-height: $heading-line-height; //0.97;
+  margin-top: 0em;
+  margin-bottom: $heading-line-height/4;
+
+  & + h1, & + h2, & + h3, & + h4, & + h5, & + h6 {
+  //  margin-top: 0-$heading-line-height/8;
+  }
+}
+
+
+
+input {
+    font-family: $fontRegular;
+}
+
+h1,
+h2,
+h3,
+h6 {
+  font-weight: 700;
+  line-height: 1.03846; //0.97;
+
+}
+
+p a, p a:visited, h5 a, h5 a:visited {
+  font-weight: 500;
+  text-decoration: underline;
+  display: block;
+}
+
+h4, h5 {
+  font-weight: 500;
+  margin-top: 0em;
+  margin-bottom: 0.35rem;
+}
+
+/* Copy & Lists */
+
+input {
+    font-family: $fontRegular;
+}
+
+strong h1, b h1,
+strong h2, b h2,
+strong h3, b h3,
+strong h4, b h4,
+strong h5, b h5,
+strong h6, b h6,{
+  font-weight: 700;
+}
+
+strong li {
+  font-weight: 500;
+}
+
+
+p , li{
+  line-height: 1.4;
+  max-width: 52em;
+
+  margin-top: 0em;
+  margin-bottom: 1.4em;
+  font-weight: 100; // 400
+  letter-spacing: -.0035em;
+  @include auto-break-font(16px);
+}
+
+html {
+//    @include responsive-font(2vw, 20px, 36px);
+//font-size: 28px;
+font-size: initial;
+}
+
+
+h1 {
+
+/*  @include responsive-font(3.5vw, 0 , 81px); // 4.2vw 52px 88px
+  @media screen and (max-width: $mobile-break){
+    font-size: 44px;
+  } */
+
+
+ @include auto-break-font(88px , 52px);
+  //min 52px
+}
+
+h2 {
+/*  @include responsive-font(2.4vw, 0 , 51px); // 2.8vw 30px 58px
+  @media screen and (max-width: $mobile-break){
+    font-size: 34px;
+  } */
+ @include auto-break-font(58px , 34px);
+  //min 30px
+
+}
+h3 {
+/*  @include responsive-font(1.5vw, 0 , 31px); // third 1.07vw /  sec 1.35vw / 1.85vw 24px 38px
+  @media screen and (max-width: $mobile-break){
+    font-size: 22px;
+  } */
+
+   @include auto-break-font(38px, 22px);
+
+  // min 24px
+}
+h4 // Ingress
+{
+  //font-size: 30px;
+/*  @include responsive-font(1.2vw, 0 , 30px); // third 1.07vw /  sec 1.35vw / 1.85vw 24px 38px
+  @media screen and (max-width: $mobile-break){
+    font-size: 20px;
+  } */
+   @include auto-break-font(30px, 18px);
+}
+h5 // Bread text small
+{
+/*
+  @include responsive-font(0.75vw, 0 , 16px); // third 1.07vw /  sec 1.35vw / 1.85vw 24px 38px
+  @media screen and (max-width: $mobile-break){
+    font-size: 14px;
+  } */
+  //font-size: 16px;
+   @include auto-break-font(16px , 14px);
+}
+
+h1.crop-top {
+  @include lhCrop(1.3);
+}
+
+h1.crop-bottom {
+  @include bottomCrop(1.3);
+}
+
+h2.crop-top {
+  @include lhCrop(1.3);
+}
+
+h2.crop-bottom {
+  @include bottomCrop(1.3);
+}
+p.crop-bottom {
+  @include bottomCrop(1.8);
+}
+
+.white {
+  color: $white;
+}
+
+.yellow {
+  color: $yellow;
+}
+
+.black {
+  color: $black;
+}
+
+.black-bg {
+  background-color: $black;
+}
+
+.smokegrey {
+  background-color: $smokegrey;
+}
+
+/* Hug the block above you */
+.hug {
+  margin-top: 0;
+}
+
+.sleep {
+  margin-bottom: 0;
+}
+
+.hug-left {
+  margin-inline-start: -0.07em;
+}
+
+a:visited {
+  color:inherit;
+}
+a:hover {
+  color: $darkgrey;
+}
+a:active {
+  color:inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  @include transition(ease 0.2s all);
+  letter-spacing: -.0035em;
+}
+
+.link-cta {
+//  @include auto-break-font(16px , 14px);
+font-size: 1.5em;
+font-weight: 500;
+}
+
+
+/* Tables */
+table { margin: 1.5rem 0px 1.5rem 0px; border-collapse: collapse; border-spacing: 0px; width: 100%; max-width: 100%; font-size: 12px; @include auto-break-font(12px , 10px);
+  th {}
+  td { padding: 5px 8px; border: 5px solid #FFF; background: #f1f1f1; }
+  tr {}
+}
+
+thead, tr#head { font-weight: bold; white-space: nowrap;
+  td, th { /* background: #000; color: #FFF; border: 5px solid #FFF; padding: 5px; */ text-align: left; vertical-align: bottom; }
+}
+tbody { background: #FFF; }
+tfoot { background: #000; font-weight: bold;
+  td { background: #000; color: #FFF; border: 5px solid #FFF; }
+}

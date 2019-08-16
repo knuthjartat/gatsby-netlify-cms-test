@@ -13,6 +13,7 @@ export const IndexPageTemplate = ({
   heading,
   subheading,
   subtitle,
+  blurbs,
   mainpitch,
   description,
   intro,
@@ -38,8 +39,7 @@ export const IndexPageTemplate = ({
           marginLeft: '6vw',
           marginRight: '6vw',
         }}
-      >
-      <Fade bottom cascade>
+      ><Fade  bottom cascade>
         <h1
           className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen wow flipInY" data-wow-delay="2s"
           style={{
@@ -170,7 +170,6 @@ export const pageQuery = graphql`
         }
         heading
         subheading
-        subtitle
         mainpitch {
           title
           description

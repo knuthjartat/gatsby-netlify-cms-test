@@ -3,6 +3,7 @@
 @import "style.scss"
 @import "type.scss"
 @import "navbar.sass"
+@import "footer.sass"
 
 
 
@@ -58,6 +59,11 @@ $white-ter: grey
     //justify-content: center
     align-items: center
 
+.container .section
+    margin-left: 6vw
+    margin-right: 6vw
+    margin-top: 10em
+
 .btn
     display: inline-block
     padding: 12px 16px 10px
@@ -87,9 +93,6 @@ $white-ter: grey
   fill: currentColor
 .navbar-brand .navbar-item.logo
   padding: 0 1rem
-footer.footer
-  padding: 3rem 0rem 0rem
-  background-color: transparent
 
 //Menu overrides
 $menu-item-color: $black
@@ -107,17 +110,6 @@ $menu-label-color:  $black
 .menu-list
   list-style: none !important
   text-align: left
-.social
-  padding: 2em
-.social a
-    padding: .5em .5em .3em .5em
-    border-radius: 1em
-    background-color: $white-ter
-    margin: .5em
-    width: 1em
-    height: 1em
-    vertical-align: middle
-    display: inline
 
 // blog roll
 .blog-list-item.is-featured

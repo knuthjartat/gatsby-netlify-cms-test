@@ -1,0 +1,31 @@
+footer
+  width: 100%
+  background-color: $black
+  padding: 3rem 0rem 3rem
+  color: $white
+  @include flexbox()
+  @include align-items(center)
+  @include justify-content(center)
+  .content
+    @include flex(1)
+    &.logo-footer
+      align-self: center
+      text-align: center
+    .footer-menues
+      @include flexbox()
+
+
+.social
+  @include flexbox()
+  @include align-items(flex-start)
+  padding: 0 3rem
+
+.social a
+    padding: .5em .5em .5em .5em
+    border-radius: 1em
+    background-color: $white
+    margin: .5em
+    width: 1em
+    height: 1em
+    vertical-align: middle
+    display: inline

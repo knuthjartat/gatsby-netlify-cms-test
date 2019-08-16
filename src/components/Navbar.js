@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import logo from '../img/logo.svg'
 import logo_white from '../img/logo_white.svg'
 import Fade from 'react-reveal/Fade';
 //import AniLink from "gatsby-plugin-transition-link/AniLink"
